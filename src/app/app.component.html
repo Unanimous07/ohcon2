@@ -1,0 +1,70 @@
+
+<nav class="sticky top-0 w-full p-0 z-40 text-white text-center justify-center bg-black ">
+    
+  <div class="flex w-full h-16 items-center px-4 md:px-6 justify-between">
+    
+    <a class="flex items-center -mt-px" (click)="toggleNav()" [routerLink]="''">
+      <img [src]="logo" class="w-20" alt="logo"> 
+    </a>
+
+
+       <!-- Responsive Navigation Links  -->
+   @if (isNavOpen) {
+    <div class=" w-full  flex-1 z-10 bg-gradient-to-t from-[#0000FF] to-[#000000]  mt-8 justify-start gap-6 text-sm font-medium mt-16 px-8 rounded-b-3xl shadow-5xl" >
+      <a class="flex items-center py-4" (click)="toggleNav()" [routerLink]="''">Home</a>
+      <hr>
+      <a class="flex items-center py-4" (click)="toggleNav()" [routerLink]="'/programs'">Programs & Events</a> 
+      <hr>
+      <a class="flex items-center py-4" (click)="toggleNav()" [routerLink]="'/news'">News</a>
+      <hr>
+      <a class="flex items-center py-4" (click)="toggleNav()" [routerLink]="'/resources'">Resources</a>
+      <hr>
+      <a class="flex items-center py-4" (click)="toggleNav()" [routerLink]="'/aboutUs'">About Us</a>
+    </div>
+
+} @else {
+  <div class="hidden bg-black md:flex w-full flex-1 justify-center gap-8 text-sm font-medium md:gap-6" [ngClass]="{ 'hidden': !isNavOpen }">
+    <a class="flex items-center py-4" [routerLink]="''">Home</a>
+    <a class="flex items-center py-4" [routerLink]="'/programs'">Programs & Events</a> 
+    <a class="flex items-center py-4" [routerLink]="'/news'">News</a>
+    <a class="flex items-center py-4" [routerLink]="'/resources'">Resources</a>
+    <a class="flex items-center py-4" [routerLink]="'/aboutUs'">About Us</a>
+  </div>
+
+  
+}
+    
+     <!-- Desktop Navigation  -->
+    <a class="hidden md:flex ml-auto flex items-center py-4" [routerLink]="'/get-involved'">Get Involved</a>
+
+        <!--  Responsive Navigation Toggle Button  -->
+
+        <div class="flex  md:items-center md:justify-center h-screen md:hidden ml-auto " (click)="toggleNav()">
+          <button class="focus:outline-none">
+            @if(!isNavOpen) { 
+              <svg class="h-6 w-6 text-gray-300 hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+            } @else {
+                
+              <svg class="h-6 w-6 text-gray-300 hover:text-gray-500 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            
+            }
+          </button>
+        </div>
+
+     
+
+  </div>
+
+   
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer class="w-full bg-black text-sm text-gray-50 py-4 text-center fixed bottom-0">© 2024 Ohcoma. All Rights Reserved. </footer>
+
+
+
