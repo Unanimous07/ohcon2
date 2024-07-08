@@ -10,7 +10,7 @@
 
        <!-- Responsive Navigation Links  -->
    @if (isNavOpen) {
-    <div class=" w-full  flex-1 z-10 bg-gradient-to-t from-[#0000FF] to-[#000000]  mt-80 justify-start gap-6 text-sm font-medium px-8 rounded-b-3xl shadow-5xl" >
+    <div class=" w-full  flex-1 z-0 bg-gradient-to-t from-[#0000FF] to-[#000000]  mt-80 justify-start gap-6 text-sm font-medium px-8  rounded-b-3xl shadow-5xl" >
       <a class="flex items-center py-4" (click)="toggleNav()" [routerLink]="''">Home</a>
       <hr>
       <a class="flex items-center py-4" (click)="toggleNav()" [routerLink]="'/programs'">Programs & Events</a> 
@@ -35,7 +35,7 @@
 }
     
      <!-- Desktop Navigation  -->
-    <a class="hidden md:flex ml-auto flex items-center py-4" [routerLink]="'/get-involved'">Get Involved</a>
+    <a class="hidden md:flex ml-auto flex items-center p-2 bg-[#0000FF] rounded-xl" [routerLink]="'/get-involved'">Get Involved</a>
 
         <!--  Responsive Navigation Toggle Button  -->
 
